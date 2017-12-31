@@ -15,6 +15,21 @@
   }
   let Stars = [];
   let Planets = [];
+  function Motion(object, constant){
+    if(object===this)
+        return;
+    let r = distance(object, this);
+    let ax = (constant || 200000) * ((object.x - this.x) / r) / (r * r);
+    let ay = (constant || 200000) * ((object.y - this.y) / r) / (r * r);
+    this.vx = this.vx + ax;
+    this.vy = this.vy + ay;
+    if (distance(this, object) <= 40 || this.collided == true || this.x < -40 || this.x > 40 + canvas.width || this.y > canvas.height + 40 || this.y < -40) {
+    score -= 200;
+    Planets = Planets.filter(planet => planet != this);
+    this.collided = true;
+    return;
+    }
+  }
   class Planet {
     constructor(x, y, vx, vy, style) {
       this.x = x;
@@ -33,30 +48,12 @@
     draw() {
       ctx.beginPath();
       ctx.fillStyle = this.style || "blue";
-      Stars.forEach(star => {
-        let r = distance(star, this);
-        let ax = 200000 * ((star.x - this.x) / r) / (r * r);
-        let ay = 200000 * ((star.y - this.y) / r) / (r * r);
-        this.x = this.x + this.vx / 60;
-        this.y = this.y + this.vy / 60;
-        this.vx = this.vx + ax;
-        this.vy = this.vy + ay;
-        if (
-          distance(this, star) <= 40 ||
-          this.collided == true ||
-          this.x < -40 ||
-          this.x > 40 + canvas.width ||
-          this.y > canvas.height + 40 ||
-          this.y < -40
-        ) {
-          score -= 200;
-          Planets = Planets.filter(planet => planet != this);
-          this.collided = true;
-          return;
-        }
-      });
+      Stars.forEach(Motion.bind(this));
+      this.x = this.x + this.vx / 60;
+      this.y = this.y + this.vy / 60;
       let collision_count = 0;
       Planets.forEach(planet => {
+        Motion.call(this, planet, 150000);
         if (planet == this) {
           return;
         }
