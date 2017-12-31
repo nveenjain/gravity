@@ -1,7 +1,7 @@
 {
   "short_name": "Gravitron",
   "name": "Gravitron Game",
-  "start_url": "/index.html",
+  "start_url": "/gravity/index.html",
   "display": "standalone",
   "orientation": "landscape",
   "lang": "en",
@@ -9,12 +9,12 @@
   "background_color": "black",
   "icons": [
     {
-      "src": "/favicon.png",
+      "src": "/gravity/favicon.png",
       "sizes": "200x200",
       "type": "image/png"
     },
     {
-      "src": "/globe-icon-512.png",
+      "src": "/gravity/globe-icon-512.png",
       "sizes": "512x512",
       "type": "image/png"
     }

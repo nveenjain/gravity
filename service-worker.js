@@ -1,5 +1,5 @@
 const version = 1;
-const offlineObjects = ["/index.html", "/js/script.js", "/style/style.css"];
+const offlineObjects = ["./index.html", "./js/script.js", "./style/style.css"];
 self.addEventListener("install", function installer(event) {
   event.waitUntil(
     caches.open(version).then(cache => {
@@ -39,7 +39,7 @@ function fetchedFromNetwork(response) {
 function unableToResolve() {
   var url = new URL(request.url);
   if (url.origin === location.origin) {
-    return caches.match("/index.html");
+    return caches.match("./index.html");
   }
   return offlineResponse();
 }
