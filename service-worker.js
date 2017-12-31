@@ -1,4 +1,4 @@
-const version = 1;
+const version = 2;
 const offlineObjects = ["./index.html", "./js/script.js", "./style/style.css"];
 self.addEventListener("install", function installer(event) {
   event.waitUntil(
