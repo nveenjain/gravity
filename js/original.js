@@ -4,6 +4,8 @@
   canvas.width = innerWidth;
   const ctx = canvas.getContext("2d");
   let score = 0;
+  let level = 1;
+  let nextLevel = 2000; // Score needed for level 2 - gets increased on level-up
   const touchEnabled = "ontouchstart" in document.documentElement;
   let situation1 = false;
   const gravityAcceleration = touchEnabled ? 200000 : 200000;
@@ -143,6 +145,19 @@
   function calculateScore() {
     score += Planets.length * Stars.length * 5;
     if (Planets.length == 0) score -= 1;
+    if (score > nextLevel && score < nextLevel + (nextLevel / 200)) {
+      levelUp();
+    }
+  }
+  function levelUp() {
+    function randomInt(min, max) {
+      return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+    let sunLocationX = randomInt(1050, 100);
+    let sunLocationY = randomInt(550, 100);
+    level += 1; // Increase level by 1
+    new Star(sunLocationX, sunLocationY); // Place new Sun in random location
+    nextLevel = nextLevel * 2.5; // Increase score requirement for next level
   }
   function redraw() {
     ctx.fillStyle = "black";
@@ -153,8 +168,10 @@
       if (!touchEnabled) {
         ctx.font = "48px Comic Sans";
         ctx.fillText(`Your Score: ${score}`, 50, 50);
+        ctx.font = "48px Comic Sans";
+        ctx.fillText(`Level: ${level}`, 570, 50);
         ctx.font = "18px Comic Sans";
-        ctx.fillText("Press H for help", 80, 80);
+        ctx.fillText("Press H for help", 80, 120);
       } else {
         ctx.font = "30px Comic Sans";
         ctx.fillText(`Your Score: ${score}`, 50, 50);
