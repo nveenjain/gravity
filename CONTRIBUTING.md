@@ -57,7 +57,7 @@ excludes people in socially marginalized groups.
 Private harassment is also unacceptable. No matter who you are, if you feel
 you have been or are being harassed or made uncomfortable by a community
 member, please contact one of the channel ops or any of the
-[CONTRIBUTING.md](https://github.com/jden/CONTRIBUTING.md) core team
+[CONTRIBUTING.md](https://github.com/jden/CONTRIBUTING.md) [core team member](https://github.com/nveenjain)
 immediately. Whether you're a regular contributor or a newcomer, we care about
 making this community a safe place for you and we've got your back.
 
@@ -66,14 +66,10 @@ behaviour is not welcome.
 
 # Communication
 
-There is an IRC channel on irc.freenode.net, channel `#CONTRIBUTING.md`. You're
-welcome to drop in and ask questions, discuss bugs and such. The channel is
-not currently logged.
-
 GitHub issues are the primary way for communicating about specific proposed
 changes to this project.
 
-In both contexts, please follow the conduct guidelines above. Language issues
+Please follow the conduct guidelines above. Language issues
 are often contentious and we'd like to keep discussion brief, civil and focused
 on what we're actually doing, not wandering off into too much imaginary stuff.
 
@@ -84,7 +80,7 @@ on what we're actually doing, not wandering off into too much imaginary stuff.
 1. Login to [Github](https://github.com/login)
 2. Access the repo at [https://github.com/nveenjain/gravity](https://github.com/nveenjain/gravity).
 3. Hit the 'fork' button in the top right corner.
-4. Work on the forked repo.
+4. Work on
 
 ## Cloning the repo
 
