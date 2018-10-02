@@ -169,9 +169,11 @@
         ctx.font = "48px Comic Sans";
         ctx.fillText(`Your Score: ${score}`, 50, 50);
         ctx.font = "48px Comic Sans";
-        ctx.fillText(`Level: ${level}`, 570, 50);
+        ctx.fillText(`Level: ${level}`, 500, 50);
+        ctx.font = "48px Comic Sans";
+        ctx.fillText(`Next Level: ${nextLevel}`, 800, 50);
         ctx.font = "18px Comic Sans";
-        ctx.fillText("Press H for help", 80, 120);
+        ctx.fillText("Press H for help", 80, 80);
       } else {
         ctx.font = "30px Comic Sans";
         ctx.fillText(`Your Score: ${score}`, 50, 50);
