@@ -2,15 +2,15 @@
 
 ## Forking the repo
 1. Make sure you're logged into your GitHub account!
-2. Access the repo at [https://github.com/nveenjain/gravity](https://github.com/nveenjain/gravity).
+2. Access the repo at [https://github.com/timothygk/ML0002](https://github.com/timothygk/ML0002).
 3. Hit the 'fork' button in the top right corner.
 4. Hack away in your local version!
 
 ## Cloning the repo
 1. Make sure you have (git)[https://git-scm.com/] installed!
-2. Access the repo at [https://github.com/nveenjain/gravity](https://github.com/nveenjain/gravity).
+2. Access the repo at [https://github.com/timothygk/ML0002](https://github.com/timothygk/ML0002).
 3. Press the big green 'clone or download' button and copy that URL.
-4. Open your favorite terminal, and execute the command `git clone https://github.com/nveenjain/gravity`.
+4. Open your favorite terminal, and execute the command `git clone https://github.com/timothygk/ML0002`.
 5. Open the directory with `cd gravity`.
 
 ## Fixing a bug
