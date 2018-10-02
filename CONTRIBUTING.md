@@ -34,8 +34,6 @@ We are committed to providing a friendly, safe and welcoming environment for
 all, regardless of gender, sexual orientation, disability, ethnicity, religion,
 or similar personal characteristic.
 
-On IRC, please avoid using overtly sexual nicknames or other nicknames that
-might detract from a friendly, safe and welcoming environment for all.
 
 Please be kind and courteous. There's no need to be mean or rude.
 Respect that people have differences of opinion and that every design or
@@ -72,7 +70,7 @@ Please follow the conduct guidelines above. Language issues
 are often contentious and we'd like to keep discussion brief, civil and focused
 on what we're actually doing, not wandering off into too much imaginary stuff.
 
-# How To Start Contribute
+# How To Start Contributing
 
 ## Forking the repo
 
