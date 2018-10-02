@@ -56,8 +56,7 @@ excludes people in socially marginalized groups.
 
 Private harassment is also unacceptable. No matter who you are, if you feel
 you have been or are being harassed or made uncomfortable by a community
-member, please contact one of the channel ops or any of the
-[CONTRIBUTING.md](https://github.com/jden/CONTRIBUTING.md) [core team member](https://github.com/nveenjain)
+member, please contact one of the channel ops or the [core team member](https://github.com/nveenjain)
 immediately. Whether you're a regular contributor or a newcomer, we care about
 making this community a safe place for you and we've got your back.
 
@@ -80,7 +79,7 @@ on what we're actually doing, not wandering off into too much imaginary stuff.
 1. Login to [Github](https://github.com/login)
 2. Access the repo at [https://github.com/nveenjain/gravity](https://github.com/nveenjain/gravity).
 3. Hit the 'fork' button in the top right corner.
-4. Work on
+4. Work on the forked repo.
 
 ## Cloning the repo
 
