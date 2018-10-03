@@ -150,14 +150,52 @@
     }
   }
   function levelUp() {
+    let sunLocationX = randomInt(radius, innerWidth - radius);
+    let sunLocationY = randomInt(radius + 100, innerHeight - radius);
+    let existingX = [];
+    let existingY = [];
+    let distance = 20; // Default max distance new stars should have from existing ones
+
+    Stars.forEach(function(star) {
+      existingX.push(star.x);
+      existingY.push(star.y);
+    });
+
+    let i = 0;
+    while (i < existingX.length) {
+      for (var z = 0; z < existingX.length; z++) {
+        if (!between(sunLocationX, existingX[z] - distance, // If not within 20px of any existing x co-ords
+            existingX[z] + distance)) {
+              i++;
+        }
+      }
+      sunLocationX = randomInt(radius, innerWidth - radius); // Give new co-ords
+    }
+    while (i < existingY.length) {
+      for (var z = 0; z < existingY.length; z++) {
+        if (!between(sunLocationY, existingY[z] - distance, // If not within 20px of any existing y co-ords
+            existingY[z] + distance)) {
+              i++;
+        }
+      }
+      sunLocationY = randomInt(radius + 100, innerHeight - radius); // Give new co-ords
+    }
+    level += 1; // Increase level by 1
+    new Star(sunLocationX, sunLocationY); // Place new Sun in random location
+    nextLevel = nextLevel * 2; // Increase score requirement for next level
+
     function randomInt(min, max) {
       return Math.floor(Math.random() * (max - min + 1)) + min;
     }
-    let sunLocationX = randomInt(1050, 100);
-    let sunLocationY = randomInt(550, 100);
-    level += 1; // Increase level by 1
-    new Star(sunLocationX, sunLocationY); // Place new Sun in random location
-    nextLevel = nextLevel * 2.5; // Increase score requirement for next level
+
+    function between(x, min, max) {
+      if (x >= min && x <= max) {
+        return true;
+      } else {
+          return false;
+      }
+    }
+
   }
   function redraw() {
     ctx.fillStyle = "black";
@@ -177,6 +215,10 @@
       } else {
         ctx.font = "30px Comic Sans";
         ctx.fillText(`Your Score: ${score}`, 50, 50);
+        ctx.font = "30px Comic Sans";
+        ctx.fillText(`Level: ${level}`, 50, 80);
+        ctx.font = "30px Comic Sans";
+        ctx.fillText(`Next Level: ${nextLevel}`, 50, 110);
       }
       Stars.forEach(star => star.draw());
       Planets.forEach(planet => {
