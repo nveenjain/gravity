@@ -162,24 +162,37 @@
     });
 
     let i = 0;
+
     while (i < existingX.length) {
       for (var z = 0; z < existingX.length; z++) {
         if (!between(sunLocationX, existingX[z] - distance, // If not within 20px of any existing x co-ords
             existingX[z] + distance)) {
+              // Is OK - not close to existing co-ordinate
               i++;
         }
       }
-      sunLocationX = randomInt(radius, innerWidth - radius); // Give new co-ords
+      if (i < existingX.length) {
+        // Give new x co-ord and repeat loop to check new co-ord
+        sunLocationX = randomInt(radius, innerWidth - radius);
+        i = 0;
+      } // else: Is OK. Keep this co-ordinate
     }
+    i = 0;
     while (i < existingY.length) {
       for (var z = 0; z < existingY.length; z++) {
         if (!between(sunLocationY, existingY[z] - distance, // If not within 20px of any existing y co-ords
             existingY[z] + distance)) {
+              // Is OK - not close to existing co-ordinate
               i++;
         }
       }
-      sunLocationY = randomInt(radius + 100, innerHeight - radius); // Give new co-ords
+      if (i < existingY.length) {
+        // Give new y co-ord and repeat loop to check new co-ord
+        sunLocationY = randomInt(radius +100, innerHeight - radius);
+        i = 0;
+      } // else: Is OK. Keep this co-ordinate
     }
+
     level += 1; // Increase level by 1
     new Star(sunLocationX, sunLocationY); // Place new Sun in random location
     nextLevel = nextLevel * 2; // Increase score requirement for next level
